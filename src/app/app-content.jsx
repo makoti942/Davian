@@ -30,7 +30,7 @@ import RiskCalculatorButton from '../components/risk-calculator-button/risk-calc
 import BotBuilder from '../pages/bot-builder';
 import Main from '../pages/main';
 import OverUnder from '../pages/OverUnder';
-import MakotiMagic from '../pages/MakotiMagic'; // <--- LOAD MAKOTI MAGIC
+import jojoMagic from '../pages/jojoMagic'; // <--- LOAD jojo MAGIC
 import './app.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import '../components/bot-notification/bot-notification.scss';

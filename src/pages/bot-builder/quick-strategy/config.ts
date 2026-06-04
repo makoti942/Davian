@@ -7,7 +7,7 @@ import {
     REVERSE_D_ALEMBERT,
     REVERSE_MARTINGALE,
     STRATEGY_1_3_2_6,
-    MAKOTI_V3_RISE_FALL,
+    jojo_V3_RISE_FALL,
 } from '../../../constants/quick-strategies';
 import { LocalizeHTMLForSellConditions } from './localize_html';
 import { TConfigItem, TStrategies, TValidationItem } from './types';
@@ -667,11 +667,11 @@ export const STRATEGIES = (): TStrategies => ({
             ],
         ],
     },
-    MAKOTI_V3_RISE_FALL: {
-        name: 'MAKOTIV3RISE_FALL',
-        label: localize('MAKOTI V3 RISE FALL'),
-        rs_strategy_name: 'MAKOTIV3RISE_FALL',
-        description: MAKOTI_V3_RISE_FALL(),
+    jojo_V3_RISE_FALL: {
+        name: 'jojoV3RISE_FALL',
+        label: localize('jojo V3 RISE FALL'),
+        rs_strategy_name: 'jojoV3RISE_FALL',
+        description: jojo_V3_RISE_FALL(),
         fields: [
             [
                 LABEL_SYMBOL(),

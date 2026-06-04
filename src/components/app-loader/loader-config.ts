@@ -4,7 +4,7 @@ export const LOADER_CONFIG = {
     ENABLED: true,
 
     BRANDING: {
-        title: 'MAKOTI TRADERS',
+        title: 'DAVIANTRADING HUB',
         subtitle: 'TRADING PLATFORM',
     },
 

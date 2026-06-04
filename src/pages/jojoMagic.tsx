@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'framer-motion';
 import { Zap, BarChart2, Cpu, RefreshCw, TrendingUp, Play, Square } from 'lucide-react';
-import MakotiMagicStore from '@/stores/makoti-magic-store';
-import './MakotiMagic.scss';
+import jojoMagicStore from '@/stores/jojo-magic-store';
+import './jojoMagic.scss';
 
-const MakotiMagic = observer(() => {
+const jojoMagic = observer(() => {
     const {
         connectWebSocket,
         setSelectedSymbol,
@@ -20,11 +20,11 @@ const MakotiMagic = observer(() => {
         tick_history,
         scan_attempts,
         is_auto_scanning,
-    } = MakotiMagicStore;
+    } = jojoMagicStore;
 
     useEffect(() => {
         connectWebSocket();
-        return () => MakotiMagicStore.dispose();
+        return () => jojoMagicStore.dispose();
     }, []);
 
     const volatilityOptions = [
@@ -51,7 +51,7 @@ const MakotiMagic = observer(() => {
     const hasPrediction = prediction && prediction.predictedDigit !== null && prediction.predictedDigit !== undefined;
 
     return (
-        <div className='makoti-magic'>
+        <div className='jojo-magic'>
             <div className='mm-matrix-bg'>
                 {Array.from({ length: 100 }).map((_, i) => (
                     <span key={i} className='mm-matrix-char' style={{ animationDelay: `${Math.random() * 5}s` }}>
@@ -64,7 +64,7 @@ const MakotiMagic = observer(() => {
                 <div className='mm-header__left'>
                     <div className='mm-header__icon'><Zap size={17} /></div>
                     <div>
-                        <div className='mm-header__title'>Makoti Magic</div>
+                        <div className='mm-header__title'>jojo Magic</div>
                         <div className='mm-header__sub'>Prediction Engine</div>
                     </div>
                 </div>
@@ -181,4 +181,4 @@ const MakotiMagic = observer(() => {
     );
 });
 
-export default MakotiMagic;
+export default jojoMagic;

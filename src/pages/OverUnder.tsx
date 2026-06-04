@@ -402,7 +402,7 @@ const OverUnder = observer(() => {
                                 <motion.div className='ou-cell__fill'
                                     animate={{ height: `${Math.max(pct, 2)}%` }}
                                     transition={{ duration: 0.4, ease: 'easeOut' }}
-                                    style={{ background: hot ? 'linear-gradient(180deg,#10b981,#059669)' : cold ? 'linear-gradient(180deg,#ef4444,#b91c1c)' : 'linear-gradient(180deg,#3b82f6,#1d4ed8)' }}
+                                    style={{ background: hot ? 'linear-gradient(180deg,#10b981,#059669)' : cold ? 'linear-gradient(180deg,#ef4444,#b91c1c)' : 'linear-gradient(180deg,#34d399,#059669)' }}
                                 />
                             </div>
                             <div className='ou-cell__pct'>{pct.toFixed(1)}%</div>

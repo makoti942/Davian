@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState, useEffect } from 'react';
-import { ALL_SYMBOLS, SYMBOL_LABELS, PIP_SIZES, openMakotiWS, MakotiWS } from './makoti-ws';
+import { ALL_SYMBOLS, SYMBOL_LABELS, PIP_SIZES, openjojoWS, jojoWS } from './jojo-ws';
 import { onNewSystemMessage } from '@/auth/NewDerivAuth';
 
 type BotId = 'pvty_kill' | 'rf_v4';
@@ -114,7 +114,7 @@ function calcMicroChoppiness(prices: number[]): SymbolDirectionResult {
 // ─── Global POC listener (survives WS reconnect via onNewSystemMessage) ──
 // Flags when any contract settles (win or loss), so auto-switcher can update
 // volatility on the next scan cycle.
-(window as any).__makoti_lastContractSettled = true;
+(window as any).__jojo_lastContractSettled = true;
 
 let _pocUnsub: (() => void) | null = null;
 
@@ -124,7 +124,7 @@ function startPocListener() {
         try {
             const d = JSON.parse(event.data);
             if (d.msg_type === 'proposal_open_contract' && d.proposal_open_contract?.is_sold) {
-                (window as any).__makoti_lastContractSettled = true;
+                (window as any).__jojo_lastContractSettled = true;
             }
         } catch (_) {}
     });
@@ -152,7 +152,7 @@ export const Scanner: React.FC = () => {
     const [notification, setNotification] = useState<{ msg: string; type: 'info' | 'success' | 'warn' } | null>(null);
 
     // Refs for logic (avoid stale closures)
-    const wsRef = useRef<MakotiWS | null>(null);
+    const wsRef = useRef<jojoWS | null>(null);
     const pendingRef = useRef<Set<string>>(new Set());
     const collectedRef = useRef<Map<string, any>>(new Map());
     const botRef = useRef<BotId>('pvty_kill');
@@ -195,7 +195,7 @@ export const Scanner: React.FC = () => {
         } catch (_) {}
         // 4. Dashboard store (chart)
         try { const rs = (window as any).__store_instance; if (rs?.dashboard?.setBotBuilderSymbol) rs.dashboard.setBotBuilderSymbol(sym); } catch (_) {}
-        (window as any).__makoti_lastContractSettled = false;
+        (window as any).__jojo_lastContractSettled = false;
         showNotify(`Volatility Updated: ${SYMBOL_LABELS[sym]}`, 'success');
     }, [showNotify, clearPending]);
 
@@ -208,7 +208,7 @@ export const Scanner: React.FC = () => {
     const ensureWs = useCallback(() => {
         if (wsRef.current && wsRef.current.isOpen()) return wsRef.current;
         cleanup();
-        const mws = openMakotiWS(
+        const mws = openjojoWS(
             (data) => msgHandlerRef.current(data),
             () => {
                 if (scanningRef.current) {
@@ -307,7 +307,7 @@ export const Scanner: React.FC = () => {
 
             if (currentBot === 'rf_v4') {
                 if (bestSym && bestSym !== currentBestRef.current && autoSwitchRef.current) {
-                    if ((window as any).__makoti_lastContractSettled) {
+                    if ((window as any).__jojo_lastContractSettled) {
                         applySwitch(bestSym);
                     } else {
                         setPending(bestSym);
@@ -316,7 +316,7 @@ export const Scanner: React.FC = () => {
                 }
 
                 const ps = pendingSymbolRef.current;
-                if (ps && (window as any).__makoti_lastContractSettled && autoSwitchRef.current) {
+                if (ps && (window as any).__jojo_lastContractSettled && autoSwitchRef.current) {
                     if (best.indexOf(ps) >= 0) applySwitch(ps);
                     else clearPending();
                 }

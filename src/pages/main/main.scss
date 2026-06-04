@@ -42,7 +42,7 @@
 
     // Scrollable tab content for custom full-page tools
     &[data-active-tab='over_under'],
-    &[data-active-tab='makoti_magic'] {
+    &[data-active-tab='jojo_magic'] {
         .dc-tabs__content {
             overflow-y: auto !important;
             overflow-x: hidden !important;
@@ -87,7 +87,7 @@
             }
 
             &__active {
-                background: linear-gradient(145deg, #007cf0, #00dfd8) !important;
+                background: linear-gradient(145deg, #10b981, #34d399) !important;
                 box-shadow: 0 0 8px rgba(0, 124, 240, 0.7), 0 0 16px rgba(0, 223, 216, 0.7) !important;
                 color: #ffffff !important;
                 position: relative;
@@ -1007,7 +1007,7 @@
     svg {
         position: relative;
         filter: none;
-        fill: #E6E6FA !important; // Light purple icons
+        fill: #a7f3d0 !important; // Light purple icons
 
         &::before {
             display: none;
@@ -1018,13 +1018,13 @@
     svg > path,
     svg > g > path,
     svg > * {
-        fill: #E6E6FA !important; // Light purple icons
+        fill: #a7f3d0 !important; // Light purple icons
         stroke: none !important;
         filter: none !important;
     }
 
     &.dc-tabs__active {
-        background: linear-gradient(145deg, #007cf0, #00dfd8) !important;
+        background: linear-gradient(145deg, #10b981, #34d399) !important;
         box-shadow: 0 0 8px rgba(0, 124, 240, 0.7), 0 0 16px rgba(0, 223, 216, 0.7) !important;
         color: #ffffff !important;
         font-weight: bold !important;
@@ -1113,7 +1113,7 @@
         svg,
         svg > path,
         svg > g > path {
-            fill: #E6E6FA !important; // Light purple icons on hover
+            fill: #a7f3d0 !important; // Light purple icons on hover
             stroke: none !important;
             filter: none !important;
         }
@@ -1151,7 +1151,7 @@
     svg {
         position: relative;
         filter: none;
-        fill: #E6E6FA !important; // Light purple icons
+        fill: #a7f3d0 !important; // Light purple icons
 
         &::before {
             display: none;
@@ -1162,7 +1162,7 @@
     svg *,
     svg > path,
     svg > g > path {
-        fill: #E6E6FA !important; // Light purple icons
+        fill: #a7f3d0 !important; // Light purple icons
         stroke: none !important;
         filter: none !important;
     }
@@ -1171,7 +1171,7 @@
     &.dc-tabs__active {
         color: #ffffff !important;
         font-weight: bold !important;
-        background: linear-gradient(145deg, #007cf0, #00dfd8) !important;
+        background: linear-gradient(145deg, #10b981, #34d399) !important;
         box-shadow: 0 0 8px rgba(0, 124, 240, 0.7), 0 0 16px rgba(0, 223, 216, 0.7) !important;
         border-bottom: none !important;
         overflow: hidden;
@@ -1220,14 +1220,14 @@ body.theme--dark .dc-tabs__item {
     }
 
     svg {
-        fill: #E6E6FA !important; // Light purple icons
+        fill: #a7f3d0 !important; // Light purple icons
     }
 
     svg,
     svg *,
     svg > path,
     svg > g > path {
-        fill: #E6E6FA !important; // Light purple icons
+        fill: #a7f3d0 !important; // Light purple icons
         stroke: none !important;
         filter: none !important;
     }
@@ -1236,7 +1236,7 @@ body.theme--dark .dc-tabs__item {
     &.dc-tabs__active {
         color: #ffffff !important;
         font-weight: bold !important;
-        background: linear-gradient(145deg, #007cf0, #00dfd8) !important;
+        background: linear-gradient(145deg, #10b981, #34d399) !important;
         box-shadow: 0 0 8px rgba(0, 124, 240, 0.7), 0 0 16px rgba(0, 223, 216, 0.7) !important;
         border-bottom: none !important;
         overflow: hidden;

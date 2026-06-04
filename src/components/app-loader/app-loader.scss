@@ -20,7 +20,7 @@
 .loader-bg {
     position: absolute;
     inset: 0;
-    background: url('../../assets/images/cod-bg.jpg') center / cover no-repeat;
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a1a3e 30%, #0d2137 60%, #0a0f1e 100%);
     transform: translateZ(0);
     will-change: transform;
     animation: bgZoom 12s ease-in-out infinite alternate;
@@ -183,7 +183,7 @@
     transform: scaleX(0);
     transform-origin: left;
     will-change: transform;
-    background: linear-gradient(90deg, #85acb0, #ffa500, #85acb0);
+    background: linear-gradient(90deg, #10b981, #34d399, #10b981);
     background-size: 200% 100%;
     animation: barFill ease-in-out forwards, shimmer 2s linear infinite;
 }

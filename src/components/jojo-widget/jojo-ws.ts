@@ -48,17 +48,17 @@ export function getToken(): string | null {
 
 // ─── WebSocket factory ────────────────────────────────────────────────────────
 
-export type MakotiWS = {
+export type jojoWS = {
     send: (msg: object) => void;
     close: () => void;
     isOpen: () => boolean;
 };
 
-export function openMakotiWS(
+export function openjojoWS(
     onMessage: (data: any) => void,
     onReady: () => void,
     onClose: () => void,
-): MakotiWS {
+): jojoWS {
     const appId     = getAppId();
     const serverUrl = getSocketURL();
     const ws        = new WebSocket(`wss://${serverUrl}/websockets/v3?app_id=${appId}`);

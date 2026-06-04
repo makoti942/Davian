@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════════════════
-//  MAKOTI PREDICTION ENGINE v3
+//  jojo PREDICTION ENGINE v3
 //  Multi-strategy ensemble with market state detection, dynamic weighting,
 //  and contract-type-aware signal generation for Rise/Fall, Over/Under,
 //  Even/Odd, and Digits. 47 strategies total (36 RF, 5 OU, 6 EO).

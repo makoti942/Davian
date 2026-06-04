@@ -1,6 +1,6 @@
 
 // ═══════════════════════════════════════════════════════════
-//  Makoti AI - Advanced Over/Under Analysis Engine v2.7
+//  jojo AI - Advanced Over/Under Analysis Engine v2.7
 //  (Edge Analysis Engine)
 // ═══════════════════════════════════════════════════════════
 

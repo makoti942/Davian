@@ -14,7 +14,7 @@ const SUBTITLES = [
     'MISSION READY',
 ];
 
-const TITLE = 'MAKOTI TRADERS';
+const TITLE = 'DAVIANTRADING HUB';
 
 const AppLoader: React.FC<AppLoaderProps> = ({ onLoadingComplete, duration = 9000 }) => {
     const [show, setShow] = useState(true);
@@ -61,18 +61,18 @@ const AppLoader: React.FC<AppLoaderProps> = ({ onLoadingComplete, duration = 900
                     <svg width='80' height='80' viewBox='0 0 80 80' fill='none'>
                         <defs>
                             <linearGradient id='eg' x1='0' y1='0' x2='1' y2='1'>
-                                <stop offset='0%' stopColor='#85acb0' />
-                                <stop offset='100%' stopColor='#ffa500' />
+                                <stop offset='0%' stopColor='#10b981' />
+                                <stop offset='100%' stopColor='#34d399' />
                             </linearGradient>
                             <linearGradient id='eg2' x1='0' y1='1' x2='1' y2='0'>
-                                <stop offset='0%' stopColor='#ffa500' />
-                                <stop offset='100%' stopColor='#85acb0' />
+                                <stop offset='0%' stopColor='#34d399' />
+                                <stop offset='100%' stopColor='#10b981' />
                             </linearGradient>
                         </defs>
                         <path d='M40 4L76 40L40 76L4 40L40 4Z' stroke='url(#eg)' strokeWidth='3' fill='none' />
                         <path d='M40 14L66 40L40 66L14 40L40 14Z' stroke='url(#eg2)' strokeWidth='2' fill='none' opacity='0.6' />
                         <path d='M40 24L56 40L40 56L24 40L40 24Z' stroke='url(#eg)' strokeWidth='1.5' fill='none' opacity='0.4' />
-                        <circle cx='40' cy='40' r='6' fill='#85acb0' />
+                        <circle cx='40' cy='40' r='6' fill='#10b981' />
                         <circle cx='40' cy='40' r='2' fill='#fff' opacity='0.8' />
                     </svg>
                 </div>
@@ -81,9 +81,9 @@ const AppLoader: React.FC<AppLoaderProps> = ({ onLoadingComplete, duration = 900
                 <div className='lock-wrap'>
                     <svg width='36' height='40' viewBox='0 0 36 40' fill='none' className='lock-svg'>
                         <rect x='5' y='16' width='26' height='20' rx='3' fill='none' stroke='url(#eg)' strokeWidth='2' />
-                        <rect x='5' y='16' width='26' height='20' rx='3' fill='rgba(133,172,176,0.08)' />
-                        <circle cx='18' cy='28' r='4' fill='none' stroke='#85acb0' strokeWidth='1.5' opacity='0.3' />
-                        <circle className='lock-inner' cx='18' cy='28' r='2' fill='none' stroke='#ffa500' strokeWidth='1.5' strokeDasharray='3 4' />
+                        <rect x='5' y='16' width='26' height='20' rx='3' fill='rgba(16,185,129,0.08)' />
+                        <circle cx='18' cy='28' r='4' fill='none' stroke='#10b981' strokeWidth='1.5' opacity='0.3' />
+                        <circle className='lock-inner' cx='18' cy='28' r='2' fill='none' stroke='#34d399' strokeWidth='1.5' strokeDasharray='3 4' />
                         <path className='lock-shackle' d='M18 16V12C18 8.5 15 6 12 6C9 6 6 8.5 6 12V14' stroke='url(#eg)' strokeWidth='2.5' strokeLinecap='round' fill='none' />
                     </svg>
                 </div>

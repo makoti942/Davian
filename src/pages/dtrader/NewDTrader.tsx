@@ -200,13 +200,13 @@ const NewDTrader: React.FC = () => {
       const lastC = vis[vis.length - 1];
       const lastY = cToY(lastC.close);
       ctx.fillStyle = '#333';
-      ctx.strokeStyle = '#85acb0';
+      ctx.strokeStyle = '#10b981';
       ctx.lineWidth = 1;
       const label = lastC.close.toFixed(2);
       const tw = ctx.measureText(label).width + 16;
       const lx = W - pad.right - tw;
       const ly = lastY > pad.top + chartH / 2 ? lastY - 20 : lastY + 10;
-      ctx.fillStyle = '#85acb0';
+      ctx.fillStyle = '#10b981';
       ctx.beginPath();
       ctx.roundRect(lx, ly, tw, 18, 3);
       ctx.fill();
@@ -276,7 +276,7 @@ const NewDTrader: React.FC = () => {
     ctx.beginPath();
     ctx.moveTo(toX(0), toY(visible[0]));
     for (let i = 1; i < visible.length; i++) ctx.lineTo(toX(i), toY(visible[i]));
-    ctx.strokeStyle = '#85acb0';
+    ctx.strokeStyle = '#10b981';
     ctx.lineWidth = 2;
     ctx.stroke();
 
@@ -284,7 +284,7 @@ const NewDTrader: React.FC = () => {
     const lastY = toY(visible[visible.length - 1]);
     ctx.beginPath();
     ctx.arc(lastX, lastY, 3, 0, Math.PI * 2);
-    ctx.fillStyle = '#85acb0';
+    ctx.fillStyle = '#10b981';
     ctx.fill();
 
     ctx.strokeStyle = 'rgba(133,172,176,0.4)';
@@ -297,13 +297,13 @@ const NewDTrader: React.FC = () => {
     ctx.setLineDash([]);
 
     ctx.fillStyle = '#333';
-    ctx.strokeStyle = '#85acb0';
+    ctx.strokeStyle = '#10b981';
     ctx.lineWidth = 1;
     const label = visible[visible.length - 1].toFixed(2);
     const tw = ctx.measureText(label).width + 16;
     const lx = lastX - tw / 2;
     const ly = lastY > pad.top + chartH / 2 ? lastY - 20 : lastY + 10;
-    ctx.fillStyle = '#85acb0';
+    ctx.fillStyle = '#10b981';
     ctx.beginPath();
     ctx.roundRect(lx, ly, tw, 18, 3);
     ctx.fill();

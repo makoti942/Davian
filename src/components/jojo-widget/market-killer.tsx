@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ALL_SYMBOLS, SYMBOL_LABELS, PIP_SIZES, openMakotiWS, MakotiWS } from './makoti-ws';
+import { ALL_SYMBOLS, SYMBOL_LABELS, PIP_SIZES, openjojoWS, jojoWS } from './jojo-ws';
 import { analyzeSignals, findBestDuration, recordOutcome, ContractType, TradeSignal } from './prediction-engine';
 import { sendViaNewSystemWithPromise, onNewSystemMessage } from '@/auth/NewDerivAuth';
 import { useStore } from '@/hooks/useStore';
@@ -67,7 +67,7 @@ export const MarketKiller: React.FC = () => {
     >({});
 
     /* ── Refs ─────────────────────────────────────────────────────────────── */
-    const wsRef            = useRef<MakotiWS | null>(null);
+    const wsRef            = useRef<jojoWS | null>(null);
     const symbolDataRef    = useRef<Record<string, SymbolState>>({});
     const pnlRef           = useRef(0);
     const runningRef       = useRef(false);
@@ -675,7 +675,7 @@ export const MarketKiller: React.FC = () => {
             }
         };
 
-        const mws = openMakotiWS(
+        const mws = openjojoWS(
             handleMsg,
             () => {
                 addLog('Connected ✓  Subscribing to all 10 volatilities…', 'info');
