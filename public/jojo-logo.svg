@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="emeraldLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="400" height="120" rx="16" fill="#0f1a14"/>
+  <circle cx="60" cy="60" r="36" fill="url(#emerald)"/>
+  <text x="60" y="78" font-family="Arial,sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">D</text>
+  <polyline points="28,82 40,62 52,68 60,45 72,55 92,28" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <text x="115" y="58" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#10b981">DAVIAN</text>
+  <text x="115" y="82" font-family="Arial,sans-serif" font-size="16" fill="#34d399" letter-spacing="6">TRADING HUB</text>
+</svg>

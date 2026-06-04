@@ -11,7 +11,7 @@ const MenuIcon = ({ onClick }: { onClick: () => void }) => (
 );
 
 // Logo asset served from public folder
-const LOGO_SRC = '/jojo-logo.jpg';
+const LOGO_SRC = '/jojo-logo.svg';
 
 // WhatsApp Icon Component
 const WhatsAppIcon = () => (

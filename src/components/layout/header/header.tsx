@@ -320,7 +320,7 @@ const AppHeader = observer(({ isAuthenticating }: TAppHeaderProps) => {
                 <AppLogo onMenuClick={handleMenuClick} />
                 <div className='powered-by-deriv-header' ref={whatsappDropdownRef}>
                     <img
-                        src='/jojo-logo.jpg'
+                        src='/jojo-logo.svg'
                         alt='jojo TRADERS logo'
                         className='powered-by-deriv-header__logo'
                     />

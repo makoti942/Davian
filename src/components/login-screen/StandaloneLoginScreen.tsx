@@ -79,7 +79,7 @@ const StandaloneLoginScreen: React.FC = () => {
 
             <div className='login-screen__content'>
                 <div className='login-screen__logo-wrap'>
-                    <img src='/jojo-logo.jpg' alt='Davian Trading Hub' className='login-screen__logo' />
+                    <img src='/jojo-logo.svg' alt='Davian Trading Hub' className='login-screen__logo' />
                 </div>
 
                 <div className='login-screen__brand'>
