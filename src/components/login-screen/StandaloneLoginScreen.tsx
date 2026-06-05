@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
-import { generateOAuthURL } from '@/components/shared';
 import { startNewLogin, startNewSignup } from '@/auth/NewDerivAuth';
 import './LoginScreen.scss';
 
@@ -43,18 +42,6 @@ const StandaloneLoginScreen: React.FC = () => {
         };
     }, []);
 
-    const handleStandardLogin = useCallback(async () => {
-        try {
-            // Check if TMB is enabled via window global (set by the app)
-            if ((window as any).is_tmb_enabled === true) {
-                // Fallback: use standard OAuth
-            }
-            window.location.href = generateOAuthURL(false, 'home');
-        } catch {
-            window.location.href = generateOAuthURL(false, 'home');
-        }
-    }, []);
-
     const handleNewAccountsLogin = useCallback(async (e: React.MouseEvent) => {
         e.preventDefault();
         if (isNewLoginLoading) return;
@@ -93,14 +80,6 @@ const StandaloneLoginScreen: React.FC = () => {
                 </p>
 
                 <div className='login-screen__buttons'>
-                    <button
-                        className='login-screen__btn login-screen__btn--primary'
-                        onClick={handleStandardLogin}
-                    >
-                        <span className='login-screen__btn-icon'>→</span>
-                        Log In
-                    </button>
-
                     <button
                         className={`login-screen__btn login-screen__btn--secondary${isNewLoginLoading ? ' login-screen__btn--loading' : ''}`}
                         onClick={handleNewAccountsLogin}

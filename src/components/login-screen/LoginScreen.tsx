@@ -1,33 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { generateOAuthURL } from '@/components/shared';
 import { startNewLogin, startNewSignup } from '@/auth/NewDerivAuth';
-import useTMB from '@/hooks/useTMB';
 import './LoginScreen.scss';
 
 const LoginScreenInner = () => {
     const [isNewLoginLoading, setIsNewLoginLoading] = useState(false);
     const [newLoginError, setNewLoginError] = useState('');
     const [visible, setVisible] = useState(false);
-    const { onRenderTMBCheck, isTmbEnabled } = useTMB();
 
     useEffect(() => {
         const t = setTimeout(() => setVisible(true), 80);
         return () => clearTimeout(t);
     }, []);
-
-    const handleStandardLogin = async () => {
-        try {
-            const tmbEnabled = await isTmbEnabled();
-            if (tmbEnabled) {
-                await onRenderTMBCheck(true, undefined, false);
-            } else {
-                window.location.href = generateOAuthURL(false, 'home');
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
 
     const handleNewAccountsLogin = async (e: React.MouseEvent) => {
         e.preventDefault();
@@ -65,14 +49,6 @@ const LoginScreenInner = () => {
                 </p>
 
                 <div className='login-screen__buttons'>
-                    <button
-                        className='login-screen__btn login-screen__btn--primary'
-                        onClick={handleStandardLogin}
-                    >
-                        <span className='login-screen__btn-icon'>→</span>
-                        Log In
-                    </button>
-
                     <button
                         className={`login-screen__btn login-screen__btn--secondary${isNewLoginLoading ? ' login-screen__btn--loading' : ''}`}
                         onClick={handleNewAccountsLogin}
