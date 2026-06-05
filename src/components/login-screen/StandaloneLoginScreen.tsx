@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
-import { startNewLogin, startNewSignup } from '@/auth/NewDerivAuth';
+import { startNewSignup } from '@/auth/NewDerivAuth';
+import { generateOAuthURL } from '@/components/shared';
 import './LoginScreen.scss';
 
 const isUserLoggedIn = () => {
@@ -18,8 +19,6 @@ const isCallbackOrEndpoint = () => {
 const StandaloneLoginScreen: React.FC = () => {
     const [show, setShow] = useState(!isUserLoggedIn() && !isCallbackOrEndpoint());
     const [visible, setVisible] = useState(false);
-    const [isNewLoginLoading, setIsNewLoginLoading] = useState(false);
-    const [newLoginError, setNewLoginError] = useState('');
 
     useEffect(() => {
         if (!show) return;
@@ -42,20 +41,9 @@ const StandaloneLoginScreen: React.FC = () => {
         };
     }, []);
 
-    const handleNewAccountsLogin = useCallback(async (e: React.MouseEvent) => {
-        e.preventDefault();
-        if (isNewLoginLoading) return;
-        setIsNewLoginLoading(true);
-        setNewLoginError('');
-        try {
-            await startNewLogin();
-            setIsNewLoginLoading(false);
-        } catch (error) {
-            console.error('[New Accounts Login]', error);
-            setIsNewLoginLoading(false);
-            setNewLoginError('Login failed to start. Please try again or use a different browser.');
-        }
-    }, [isNewLoginLoading]);
+    const handleLogin = useCallback(() => {
+        window.location.href = generateOAuthURL(false, 'home');
+    }, []);
 
     if (!show) return null;
 
@@ -81,18 +69,13 @@ const StandaloneLoginScreen: React.FC = () => {
 
                 <div className='login-screen__buttons'>
                     <button
-                        className={`login-screen__btn login-screen__btn--secondary${isNewLoginLoading ? ' login-screen__btn--loading' : ''}`}
-                        onClick={handleNewAccountsLogin}
-                        disabled={isNewLoginLoading}
+                        className='login-screen__btn login-screen__btn--primary'
+                        onClick={handleLogin}
                     >
                         <span className='login-screen__btn-icon'>✦</span>
-                        {isNewLoginLoading ? 'Preparing…' : 'Login (New Accounts)'}
+                        Login (New Accounts)
                     </button>
                 </div>
-
-                {newLoginError && (
-                    <p className='login-screen__error'>{newLoginError}</p>
-                )}
 
                 <div className='login-screen__divider'>
                     <span>or</span>
