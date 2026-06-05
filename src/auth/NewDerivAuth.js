@@ -231,19 +231,19 @@ export async function startNewLogin() {
       'private browsing or browser extensions.')
   }
   
-  const p = [
-    ["response_type",         "code"],
-    ["client_id",             CONFIG.clientId],
-    ["redirect_uri",          CONFIG.redirectUri],
-    ["scope",                 CONFIG.scope],
-    ["state",                 state],
-    ["code_challenge",        challenge],
-    ["code_challenge_method", "S256"],
-    ["prompt",                "login consent"],
-    ["app_id",                CONFIG.legacyAppId],
-  ].map(([k, v]) => encodeURIComponent(k) + "=" + encodeURIComponent(v)).join("&")
+  const params = new URLSearchParams({
+    response_type:         "code",
+    client_id:             CONFIG.clientId,
+    redirect_uri:          CONFIG.redirectUri,
+    scope:                 CONFIG.scope,
+    state:                 state,
+    code_challenge:        challenge,
+    code_challenge_method: "S256",
+    prompt:                "login consent",
+    app_id:                CONFIG.legacyAppId,
+  })
   
-  window.location.href = CONFIG.authUrl + "?" + p
+  window.location.href = CONFIG.authUrl + "?" + params.toString()
 }
 
 export async function startNewSignup() {
@@ -258,19 +258,19 @@ export async function startNewSignup() {
   localStorage.setItem(K.state, state)
   localStorage.setItem(K.active, "true")
 
-  const p = [
-    ["response_type",         "code"],
-    ["client_id",             CONFIG.clientId],
-    ["redirect_uri",          CONFIG.redirectUri],
-    ["scope",                 CONFIG.scope],
-    ["state",                 state],
-    ["code_challenge",        challenge],
-    ["code_challenge_method", "S256"],
-    ["prompt",                "registration"],
-    ["app_id",                CONFIG.legacyAppId],
-  ].map(([k, v]) => encodeURIComponent(k) + "=" + encodeURIComponent(v)).join("&")
+  const params = new URLSearchParams({
+    response_type:         "code",
+    client_id:             CONFIG.clientId,
+    redirect_uri:          CONFIG.redirectUri,
+    scope:                 CONFIG.scope,
+    state:                 state,
+    code_challenge:        challenge,
+    code_challenge_method: "S256",
+    prompt:                "registration",
+    app_id:                CONFIG.legacyAppId,
+  })
 
-  window.location.href = CONFIG.authUrl + "?" + p
+  window.location.href = CONFIG.authUrl + "?" + params.toString()
 }
 
 let _callbackHandled = false
