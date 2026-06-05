@@ -145,7 +145,7 @@ export function subscribeNewSystemTopics() {
 const CONFIG = {
   clientId:    "33nnXLq1UCqeze07Qgiq5",
   legacyAppId: "101585",
-  redirectUri: "https://daviantradinghub.vercel.app/callback",
+  redirectUri: window.location.origin + "/callback",
   authUrl:     "https://auth.deriv.com/oauth2/auth",
   tokenUrl:    "https://auth.deriv.com/oauth2/token",
   restBase:    "https://api.derivws.com/trading/v1",
@@ -420,7 +420,7 @@ export function logoutNewSystem() {
   window.location.href =
     "https://auth.deriv.com/oauth2/sessions/logout" +
     "?redirect_uri=" +
-    encodeURIComponent("https://jojotraderss.vercel.app")
+    encodeURIComponent(window.location.origin)
 }
 
 export async function createNewWebSocket() {
