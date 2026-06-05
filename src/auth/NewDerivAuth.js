@@ -145,7 +145,7 @@ export function subscribeNewSystemTopics() {
 const CONFIG = {
   clientId:    "33nnXLq1UCqeze07Qgiq5",
   legacyAppId: "101585",
-  redirectUri: window.location.origin + "/callback",
+  redirectUri: "https://daviantradinghub.vercel.app/callback",
   authUrl:     "https://auth.deriv.com/oauth2/auth",
   tokenUrl:    "https://auth.deriv.com/oauth2/token",
   restBase:    "https://api.derivws.com/trading/v1",
