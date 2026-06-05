@@ -146,8 +146,8 @@ const CONFIG = {
   clientId:    "33nnXLq1UCqeze07Qgiq5",
   legacyAppId: "101585",
   redirectUri: window.location.origin + "/callback",
-  authUrl:     "https://oauth.deriv.com/oauth2/authorize",
-  tokenUrl:    "https://oauth.deriv.com/oauth2/token",
+  authUrl:     "https://auth.deriv.com/oauth2/auth",
+  tokenUrl:    "https://auth.deriv.com/oauth2/token",
   restBase:    "https://api.derivws.com/trading/v1",
   scope:       "trade account_manage"
 }
@@ -240,7 +240,6 @@ export async function startNewLogin() {
     code_challenge:        challenge,
     code_challenge_method: "S256",
     prompt:                "login consent",
-    app_id:                CONFIG.legacyAppId
   })
   
   window.location.href = CONFIG.authUrl + "?" + params.toString()
