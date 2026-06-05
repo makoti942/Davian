@@ -143,7 +143,7 @@ export function subscribeNewSystemTopics() {
 }
 
 const CONFIG = {
-  clientId:    "33nnXL1UCqeze07Qgiq5",
+  clientId:    "33nnXLq1UCqeze07Qgiq5",
   legacyAppId: "101585",
   redirectUri: "https://daviantradinghub.vercel.app/callback",
   authUrl:     "https://auth.deriv.com/oauth2/auth",
